@@ -25,11 +25,11 @@ export default function CardProduct({
       }}
     >
       <Rank rank={rank} />
-      <ImageProduct image={image} />
+      <ImageProduct image={image} onClick={onClick} />
       <Box mx="1rem">
         <Title title={title} />
         <Description description={description} />
-        <Price price={price} onClick={onClick} />
+        <Price price={price} />
       </Box>
     </Card>
   );
