@@ -1,10 +1,21 @@
 import { Box, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
+import { useState } from "react";
 import useWindowSize from "../../../../../functions/Utility";
 import { priceType } from "../../../../../types/CompoType";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
-export default function Price({ price, onClick }: priceType) {
+export default function Price({ price }: priceType) {
   const { width } = useWindowSize();
+  const [count, setCount] = useState(0);
+
+  const handleAdd = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const handleRemove = () => {
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
+  };
 
   return (
     <Box
@@ -13,29 +24,99 @@ export default function Price({ price, onClick }: priceType) {
       alignItems="center"
       my="1rem"
     >
-      <Typography
-        fontWeight="bold"
-        sx={{ fontSize: width > 375 ? "1.5rem" : "1rem" }}
-      >
-        ${price.toFixed(2)}
-      </Typography>
-      <Box
-        component="button"
-        sx={{
-          background: "#C67C4E",
-          color: "white",
-          height: width > 375 ? "2.5rem" : "2rem",
-          width: width > 375 ? "2.5rem" : "2rem",
-          borderRadius: width > 375 ? "15px" : "12px",
-          border: "none",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClick={onClick}
-      >
-        <AddIcon />
-      </Box>
+      {count === 0 ? (
+        <>
+          <Box
+            component="button"
+            sx={{
+              background: "#C67C4E",
+              color: "white",
+              height: width > 375 ? "2.5rem" : "2rem",
+              width: width > 375 ? "2.5rem" : "2rem",
+              borderRadius: width > 375 ? "15px" : "12px",
+              border: "none",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            onClick={handleAdd}
+          >
+            <AddIcon />
+          </Box>
+          <Typography
+            fontWeight="bold"
+            sx={{ fontSize: width > 375 ? "1.5rem" : "1rem" }}
+          >
+            ${price.toFixed(2)}
+          </Typography>
+        </>
+      ) : (
+        <Box
+          width="100%"
+          display="flex"
+          flexDirection="column"
+          alignItems="end"
+        >
+          <Typography fontWeight="bold" sx={{ fontSize: "1.5rem" }} mb="1rem">
+            ${price.toFixed(2)}
+          </Typography>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            width="100%"
+          >
+            <Box
+              component="button"
+              sx={{
+                background: "#000",
+                color: "white",
+                height: "2.5rem",
+                width: "2.5rem",
+                borderRadius: "12px",
+                border: "none",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              onClick={handleAdd}
+            >
+              <AddIcon />
+            </Box>
+            <Box
+              sx={{
+                background: "#F5F5F5",
+                color: "black",
+                width: "2.5rem",
+                height: "2.5rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "12px",
+              }}
+            >
+              {count}
+            </Box>
+            <Box
+              component="button"
+              sx={{
+                background: "#FF5A5A",
+                color: "white",
+                height: "2.5rem",
+                width: "2.5rem",
+                borderRadius: "12px",
+                border: "none",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              onClick={handleRemove}
+            >
+              <CloseRoundedIcon />
+            </Box>
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 }

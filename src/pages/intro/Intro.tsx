@@ -16,8 +16,8 @@ export default function Intro() {
       <Box bgcolor="black" width="100%" height="100vh">
         <Background />
         <Title
-          fontSize={2}
-          title="Coffee so good, your taste buds will love it."
+          fontSize={1.5}
+          title="بوی قهوه به قدری زیباست که نمیتونه متعلق به این جهان باشه .️..! اونم کنار یار!"
           color="white"
           mx="2rem"
           textAlign="center"
@@ -26,9 +26,9 @@ export default function Intro() {
           color="A9A9A9"
           fontSize="1.1rem"
           mx="3rem"
-          my="1rem"
+          my="3rem"
           textAlign="center"
-          description="The best grain, the finest roast, the powerful flavor."
+          description="به کافه لرگ خوش اومدی:)"
         />
         <Box
           component="div"
@@ -43,7 +43,7 @@ export default function Intro() {
           }}
         >
           <Btn
-            Title="Get Started"
+            Title="بزن بریم"
             bgcolor="C67C4E"
             fontSize="1.5rem"
             color="white"
