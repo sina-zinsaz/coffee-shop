@@ -5,8 +5,8 @@ import Intro from "./pages/intro/Intro";
 import Home from "./pages/home/Home.js";
 import AppContextProvider from "./context/AppContext.js";
 import Detail_Item from "./pages/detail-Item/Detail_Item.js";
-import Order from "./pages/order/Order.js";
-import Delivery from "./pages/delivery/Delivery";
+// import Order from "./pages/order/Order.js";
+// import Delivery from "./pages/delivery/Delivery";
 
 function App() {
   const { width } = useWindowSize();
@@ -18,8 +18,8 @@ function App() {
             <Route path="" index element={<Intro />} />
             <Route path="/home" element={<Home />} />
             <Route path="/detail-Item" element={<Detail_Item />} />
-            <Route path="/order" element={<Order />} />
-            <Route path="/delivery" element={<Delivery />} />
+            {/* <Route path="/order" element={<Order />} /> */}
+            {/* <Route path="/delivery" element={<Delivery />} /> */}
           </Routes>
         </AppContextProvider>
       ) : (
