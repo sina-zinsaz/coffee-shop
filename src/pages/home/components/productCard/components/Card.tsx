@@ -22,6 +22,7 @@ export default function CardProduct({
         flexDirection: "column",
         borderRadius: "20px",
         my: "0.5rem",
+        direction: "ltr",
       }}
     >
       <Rank rank={rank} />

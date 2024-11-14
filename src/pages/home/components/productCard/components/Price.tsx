@@ -43,11 +43,8 @@ export default function Price({ price }: priceType) {
           >
             <AddIcon />
           </Box>
-          <Typography
-            fontWeight="bold"
-            sx={{ fontSize: width > 375 ? "1.5rem" : "1rem" }}
-          >
-            ${price.toFixed(2)}
+          <Typography fontWeight="bold" sx={{ fontSize: "1rem" }}>
+            ريال {price.toFixed(2)}
           </Typography>
         </>
       ) : (
@@ -57,8 +54,8 @@ export default function Price({ price }: priceType) {
           flexDirection="column"
           alignItems="end"
         >
-          <Typography fontWeight="bold" sx={{ fontSize: "1.5rem" }} mb="1rem">
-            ${price.toFixed(2)}
+          <Typography fontWeight="bold" sx={{ fontSize: "1rem" }} mb="1rem">
+            ريال {price.toFixed(2)}
           </Typography>
           <Box
             display="flex"
