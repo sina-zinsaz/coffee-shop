@@ -1,15 +1,15 @@
 import { BottomNavigation } from "@mui/material";
 import Price from "./components/Price";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Btn from "../../../../components/Btn";
 import useWindowSize from "../../../../functions/Utility";
 export default function Navigation({ price }: { price: number }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { width } = useWindowSize();
 
-  const nextPage = () => {
-    navigate("/order");
-  };
+  // const nextPage = () => {
+  //   navigate("/order");
+  // };
   return (
     <>
       <BottomNavigation
