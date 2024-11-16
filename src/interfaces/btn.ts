@@ -1,14 +1,7 @@
+import { SxProps, Theme } from "@mui/material";
+
 export interface btn {
     Title:string;
-    px?:number;
-    py?:number;
-    bgcolor:string;
-    color:string;
     onClick?:() => void;
-    width?:string;
-    height?:string;
-    border?:string;
-    mb?:string;
-    fontSize?:string;
-    borderRadius?:string;
+    sx?: SxProps<Theme>;
 }
