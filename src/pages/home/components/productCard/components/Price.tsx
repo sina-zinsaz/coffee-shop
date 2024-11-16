@@ -1,20 +1,30 @@
 import { Box, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { useState } from "react";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { useContext, useState } from "react";
 import useWindowSize from "../../../../../functions/Utility";
 import { priceType } from "../../../../../types/CompoType";
-import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { AppContext } from "../../../../../context/AppContext";
 
 export default function Price({ price }: priceType) {
   const { width } = useWindowSize();
   const [count, setCount] = useState(0);
+  const { setIsProductAdded } = useContext(AppContext);
 
   const handleAdd = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => {
+      const newCount = prevCount + 1;
+      setIsProductAdded(newCount > 0);
+      return newCount;
+    });
   };
 
   const handleRemove = () => {
-    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
+    setCount((prevCount) => {
+      const newCount = prevCount > 0 ? prevCount - 1 : 0;
+      setIsProductAdded(newCount > 0);
+      return newCount;
+    });
   };
 
   return (

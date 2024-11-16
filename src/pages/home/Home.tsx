@@ -6,8 +6,13 @@ import Profile from "./components/Profile";
 import Categories from "./components/Categories";
 import ProductCard from "./components/productCard/ProductCard";
 import Background from "./components/Background";
+import Navigation from "./components/navigation/Navigation";
+import { AppContext } from "../../context/AppContext";
+import { useContext } from "react";
 
 export default function Home() {
+  const { isProductAdded } = useContext(AppContext);
+
   return (
     <>
       <Box position="absolute" zIndex="-1" width="100%" height="100%">
@@ -28,9 +33,9 @@ export default function Home() {
           <ProductCard />
         </Container>
       </Box>
-      {/* <Box position="relative" zIndex="2">
-        <BtnNavigation />
-      </Box> */}
+      <Box position="relative" zIndex="2">
+        {isProductAdded && <Navigation />}
+      </Box>
     </>
   );
 }
