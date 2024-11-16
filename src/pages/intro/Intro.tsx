@@ -45,6 +45,7 @@ export default function Intro() {
           <Btn
             Title="بزن بریم"
             sx={{
+              fontWeight: "bold",
               bgcolor: "#C67C4E",
               fontSize: "1.5rem",
               color: "white",

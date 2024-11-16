@@ -18,19 +18,19 @@ export default function Order() {
         <Head />
         <Tab />
         <Address />
-        <Hr my="15px" border="1px #EAEAEA solid"  />
-        <NumOfProductOrder />    
+        <Hr my="15px" border="1px #EAEAEA solid" />
+        <NumOfProductOrder />
       </Container>
-      <Hr my="15px" border="3px #EAEAEA solid"  />
+      <Hr my="15px" border="3px #EAEAEA solid" />
       <Container>
         <DiscountBox />
         <Title title="Payment Summary" fontSize={1} />
         <Price />
         <DeliveryFee />
-        <Hr my="10px" border="1px #EAEAEA solid"  />
+        <Hr my="10px" border="1px #EAEAEA solid" />
         <TotalPayment />
         <Navigation />
       </Container>
     </>
-  )
+  );
 }

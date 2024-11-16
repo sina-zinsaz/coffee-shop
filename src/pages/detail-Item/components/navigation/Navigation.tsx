@@ -1,13 +1,13 @@
 import { BottomNavigation } from "@mui/material";
 import Price from "./components/Price";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Btn from "../../../../components/Btn";
 export default function Navigation({ price }: { price: number }) {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const nextPage = () => {
-  //   navigate("/order");
-  // };
+  const nextPage = () => {
+    navigate("/order");
+  };
   return (
     <>
       <BottomNavigation
@@ -30,11 +30,14 @@ export default function Navigation({ price }: { price: number }) {
           sx={{
             py: "4.5%",
             fontSize: "1.1rem",
+            fontWeight: "bold",
             borderRadius: "15px",
+            color: "white",
             border: "none",
-            bgcolor: "%C67C4E",
+            bgcolor: "#C67C4E",
             px: "20%",
           }}
+          onClick={nextPage}
         />
       </BottomNavigation>
     </>
