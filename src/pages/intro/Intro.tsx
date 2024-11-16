@@ -44,13 +44,15 @@ export default function Intro() {
         >
           <Btn
             Title="بزن بریم"
-            bgcolor="C67C4E"
-            fontSize="1.5rem"
-            color="white"
+            sx={{
+              bgcolor: "#C67C4E",
+              fontSize: "1.5rem",
+              color: "white",
+              width: "90%",
+              py: "7%",
+              borderRadius: "20px",
+            }}
             onClick={NextPage}
-            width="90%"
-            py={7}
-            borderRadius="20px"
           />
         </Box>
       </Box>
