@@ -1,12 +1,12 @@
 import { BottomNavigation } from "@mui/material";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Btn from "../../../../components/Btn";
 export default function Navigation() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const nextPage = () => {
-  //   navigate("/order");
-  // };
+  const nextPage = () => {
+    navigate("/order");
+  };
   return (
     <>
       <BottomNavigation
@@ -35,6 +35,7 @@ export default function Navigation() {
             px: "20%",
             fontWeight: "bold",
           }}
+          onClick={nextPage}
         />
       </BottomNavigation>
     </>

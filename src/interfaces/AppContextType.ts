@@ -17,4 +17,6 @@ export interface AppContextType {
     cash:string;
     isProductAdded: boolean;
     setIsProductAdded: React.Dispatch<React.SetStateAction<boolean>>;
+    statusOrder: number;
+    setStatusOrder: React.Dispatch<React.SetStateAction<number>>;
 }    

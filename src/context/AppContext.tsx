@@ -17,6 +17,8 @@ export const AppContext = createContext<AppContextType>({
   cash: "",
   isProductAdded: false,
   setIsProductAdded: () => {},
+  statusOrder: 0,
+  setStatusOrder: () => {},
 });
 
 const AppContextProvider: React.FC<AppContextProviderProps> = ({
@@ -29,6 +31,7 @@ const AppContextProvider: React.FC<AppContextProviderProps> = ({
   const [numOfProduct, setNumOfProduct] = useState<number>(1);
   const [cash, setCash] = useState<string>("");
   const [isProductAdded, setIsProductAdded] = useState<boolean>(false);
+  const [statusOrder, setStatusOrder] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,6 +70,8 @@ const AppContextProvider: React.FC<AppContextProviderProps> = ({
         cash: cash,
         isProductAdded: isProductAdded,
         setIsProductAdded,
+        statusOrder: statusOrder,
+        setStatusOrder,
       }}
     >
       {children}
