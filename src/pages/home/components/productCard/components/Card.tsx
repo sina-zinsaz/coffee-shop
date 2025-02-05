@@ -22,14 +22,15 @@ export default function CardProduct({
         flexDirection: "column",
         borderRadius: "20px",
         my: "0.5rem",
+        direction: "ltr",
       }}
     >
       <Rank rank={rank} />
-      <ImageProduct image={image} />
+      <ImageProduct image={image} onClick={onClick} />
       <Box mx="1rem">
         <Title title={title} />
         <Description description={description} />
-        <Price price={price} onClick={onClick} />
+        <Price price={price} />
       </Box>
     </Card>
   );

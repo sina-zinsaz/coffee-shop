@@ -15,6 +15,10 @@ export const AppContext = createContext<AppContextType>({
   numOfProduct: 1,
   setNumOfProduct: () => {},
   cash: "",
+  isProductAdded: false,
+  setIsProductAdded: () => {},
+  statusOrder: 0,
+  setStatusOrder: () => {},
 });
 
 const AppContextProvider: React.FC<AppContextProviderProps> = ({
@@ -26,6 +30,8 @@ const AppContextProvider: React.FC<AppContextProviderProps> = ({
   const [productId, setProductId] = useState<number>();
   const [numOfProduct, setNumOfProduct] = useState<number>(1);
   const [cash, setCash] = useState<string>("");
+  const [isProductAdded, setIsProductAdded] = useState<boolean>(false);
+  const [statusOrder, setStatusOrder] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,6 +66,10 @@ const AppContextProvider: React.FC<AppContextProviderProps> = ({
         numOfProduct: numOfProduct,
         setNumOfProduct,
         cash: cash,
+        isProductAdded: isProductAdded,
+        setIsProductAdded,
+        statusOrder: statusOrder,
+        setStatusOrder,
       }}
     >
       {children}

@@ -1,8 +1,7 @@
 import { BottomNavigation } from "@mui/material";
-import Price from "./components/Price";
 import { useNavigate } from "react-router-dom";
 import Btn from "../../../../components/Btn";
-export default function Navigation({ price }: { price: number }) {
+export default function Navigation() {
   const navigate = useNavigate();
 
   const nextPage = () => {
@@ -24,18 +23,17 @@ export default function Navigation({ price }: { price: number }) {
         }}
         showLabels
       >
-        <Price price={price} />
         <Btn
-          Title="اکنون بخرید"
+          Title="کامل کردن سفارش"
           sx={{
             py: "4.5%",
             fontSize: "1.1rem",
-            fontWeight: "bold",
             borderRadius: "15px",
-            color: "white",
             border: "none",
-            bgcolor: "#C67C4E",
+            background: "linear-gradient(to left bottom, #131313, #313131)",
+            color: "white",
             px: "20%",
+            fontWeight: "bold",
           }}
           onClick={nextPage}
         />

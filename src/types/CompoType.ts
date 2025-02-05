@@ -3,10 +3,10 @@ export type DescriptionType = {
 };
 export type ImageType = {
   image: string;
+  onClick: () => void;
 };
 export type priceType = {
   price: number;
-  onClick: () => void;
 };
 export type ProductType = {
   title: string;

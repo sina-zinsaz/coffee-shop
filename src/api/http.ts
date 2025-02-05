@@ -3,8 +3,6 @@ import { CustomError } from "../interfaces/CustomError";
 
 axios.defaults.baseURL = "https://coffee-shop-data.vercel.app/";
 
-
-
 export function get<T>(url: string, config: AxiosRequestConfig = {}): Promise<T> {
   return axios
     .get(url, config)
