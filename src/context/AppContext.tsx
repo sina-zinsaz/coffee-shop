@@ -46,8 +46,6 @@ const AppContextProvider: React.FC<AppContextProviderProps> = ({
     setCash(roundedCashValue);
   }, [numOfProduct]);
 
-  // const memoizedProductId = useMemo(() => productId, [productId]);
-
   return (
     <AppContext.Provider
       value={{
